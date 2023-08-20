@@ -13,7 +13,7 @@ def register():
     # Check if the user is already logged in using the session data
     if 'username' in session:
         # If the user is logged in, redirect to the homepage
-        return redirect(url_for('index'))
+        return redirect(url_for('dashboard'))
 
     # Retrieve the CSRF token from the session or generate a new one if it doesn't exist
     csrf_token = session.get('csrf_token')
@@ -84,7 +84,7 @@ def login():
     # Check if the user is already logged in using the session data
     if 'username' in session:
         # If the user is logged in, redirect to the homepage
-        return redirect(url_for('index'))
+        return redirect(url_for('dashboard'))
 
     if request.method == 'POST':
         # Verify CSRF token to prevent CSRF attacks
@@ -131,7 +131,7 @@ def login():
                         # Reset CSRF token after successful login
                         session.pop('csrf_token', None)
 
-                        return redirect(url_for('index'))
+#                        return redirect(url_for('login'))
                     else:
                         # Invalid TOTP code, show an error message on the login page
                         error = 'Invalid TOTP code. Please try again.'
@@ -161,15 +161,9 @@ def logout():
     session.clear()
     return redirect(url_for('login'))
 
-# Route for the homepage
 def index():
-    # Check if the user is logged in using the session data
-    if 'username' in session:
-        username = session['username']
-        return render_template('index.html', username=username)
-    else:
-        # If the user is not logged in, redirect to the login page
-        return redirect(url_for('login'))
+    return render_template('index.html')
+
 
 
 

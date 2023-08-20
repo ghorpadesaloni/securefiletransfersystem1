@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Secure File Transfer System</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Use navbar-dark and bg-dark for a dark navigation bar -->
+        <div class="container">
+            <a class="navbar-brand" href="/">Secure File Transfer System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/manage-files">Manage Files</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/send-files">Send Files</a>					
+                    </li>					
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <h2>Welcome to your Dashboard, {{ username }}!</h2>
+        
+        <h3>Recent File Uploads</h3>
+        <ul>
+            {% for upload in recent_uploads %}
+                <li>File: <a href="{{ upload.file_link }}">{{ upload.filename }}</a> - Size: {{ upload.filesize }} - Uploaded on: {{ upload.upload_date }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>Recent Activities</h3>
+        <ul>
+            <!-- Add items for other recent activities if needed -->
+        </ul>
+    </div>
+    
+    <!-- Add Bootstrap JS (optional, but some Bootstrap features may require it) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
