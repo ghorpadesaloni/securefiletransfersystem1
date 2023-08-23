@@ -159,7 +159,7 @@ def login():
 def logout():
     # Clear the user's session to log them out
     session.clear()
-    return redirect(url_for('login'))
+    return redirect(url_for('default'))
 
 def index():
     return render_template('index.html')

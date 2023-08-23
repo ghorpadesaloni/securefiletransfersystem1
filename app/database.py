@@ -22,3 +22,6 @@ def create_users_table():
             )
         ''')
         conn.commit()
+
+
+

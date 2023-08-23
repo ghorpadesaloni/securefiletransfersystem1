@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('SCM checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ghorpadesaloni/securefiletransfer1.git'
+                git branch: 'main', url: 'https://github.com/SaiAshish-Konchada/SFTS-Jenkins-Test.git'
             }
         }
         stage ('docker image build') {
@@ -13,12 +13,12 @@ pipeline {
         }    
         stage ('docker login') {
             steps {
-                sh 'echo dckr_pat_D56b1i2WmP02Q8FkTZa1Jf30bvU | /usr/bin/docker login -u salonighorpade --password-stdin'
+                sh 'echo dckr_pat_TFcEvVfbxV-jpQQgyWX1wH0vqvQ | /usr/bin/docker login -u saiashishkonchada --password-stdin'
             }
         }
         stage ('docker image push') {
             steps {
-                sh 'docker image push salonighorpade/securefrontend'
+                sh 'docker image push saiashishkonchada/securefrontend'
             }
         }
         stage ('get the confirmation from user') {
