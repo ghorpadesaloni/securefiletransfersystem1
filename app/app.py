@@ -82,8 +82,8 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Replace with your SMTP server
 app.config['MAIL_PORT'] = 587  # Replace with the appropriate port
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'saloni02ghorpade@gmail.com'  # Replace with your email address
-app.config['MAIL_PASSWORD'] = 'zjodmudsfnwrwtmw'  # Replace with your email password or app-specific password
+app.config['MAIL_USERNAME'] = ''  # Replace with your email address
+app.config['MAIL_PASSWORD'] = ''  # Replace with your email password or app-specific password
 
 mail = Mail(app)  # Initialize the Flask-Mail extension
 
