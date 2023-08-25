@@ -13,7 +13,7 @@ pipeline {
         }    
         stage ('docker login') {
             steps {
-                sh ' | /usr/bin/docker login -u salonighorpade --password-stdin'
+                sh 'dckr_pat_D56b1i2WmP02Q8FkTZa1Jf30bvU | /usr/bin/docker login -u salonighorpade --password-stdin'
             }
         }
         stage ('docker image push') {
