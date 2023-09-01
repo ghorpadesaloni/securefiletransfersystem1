@@ -71,10 +71,10 @@ app = Flask(__name__)
 app.secret_key = 'my_super_secret_key'  # Replace with your actual secret key
 
 # AWS S3 Configuration
-AWS_ACCESS_KEY = 'AKIAQJYJZSKSVMCJ4ZNL'
-AWS_SECRET_KEY = 'ju2fWPMVk/637CJga7VKqYDtg23w1MKvKAsSdbTh'
+AWS_ACCESS_KEY = ''
+AWS_SECRET_KEY = ''
 AWS_REGION = 'us-east-1'
-BUCKET_NAME = 'secure-file-storage-bucket1'
+BUCKET_NAME = ''
 
 
 # Configure Flask-Mail
@@ -82,8 +82,8 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Replace with your SMTP server
 app.config['MAIL_PORT'] = 587  # Replace with the appropriate port
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'saloni02ghorpade@gmail.com'  # Replace with your email address
-app.config['MAIL_PASSWORD'] = 'phfwiuxogoovvgtq'  # Replace with your email password or app-specific password
+app.config['MAIL_USERNAME'] = ''  # Replace with your email address
+app.config['MAIL_PASSWORD'] = ''  # Replace with your email password or app-specific password
 
 mail = Mail(app)  # Initialize the Flask-Mail extension
 
